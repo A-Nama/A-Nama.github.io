@@ -1,0 +1,229 @@
+/* --- Variables & Basic Setup --- */
+:root {
+    --font-heading: 'Lora', serif;
+    --font-body: 'Nunito Sans', sans-serif;
+    --wood-bg: #6B4F4F;
+    --file-bg: #E9E0D2; 
+    --lavender-bg: #DCD6E8; 
+    --text-dark: #413C3B;
+    --text-light: #F8F5F2; 
+    --tab-color: #C1B8AC;
+    --tab-active: #E9E0D2;
+}
+
+body {
+    background-color: var(--wood-bg);
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; 
+}
+
+.desk-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.sticky-notes {
+    position: absolute;
+    top: -20px;
+    left: 800px;
+    width: 350px;
+    z-index: 20; 
+}
+
+.coffee-image {
+    position: absolute;
+    bottom: 60px;
+    right: 900px;
+    width: 250px;
+    z-index: 2; 
+}
+
+/* --- Main Portfolio File Structure --- */
+.portfolio-container {
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.25));
+}
+
+.portfolio-tabs {
+    display: flex; 
+}
+
+.tab-link {
+    flex-grow: 1; 
+    text-align: center;
+    
+    padding: 10px 20px;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    border-radius: 8px 8px 0 0;
+    background-color: var(--tab-color);
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+    color: var(--text-dark);
+    z-index: 15;
+    
+}
+
+.tab-link {
+    flex-grow: 1; 
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid #aaa;
+    border-bottom: none;
+    background-color: var(--tab-color);
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+    color: var(--text-dark);
+    z-index: 15;
+    border-left: none;
+}
+
+.tab-link:first-child {
+    border-left: 1px solid #aaa;
+    border-top-left-radius: 8px;
+}
+
+.tab-link:last-child {
+    border-top-right-radius: 8px;
+}
+
+.tab-link.active {
+    background-color: var(--file-bg); 
+    border-bottom: 1px solid var(--file-bg);
+}
+
+.portfolio-file {
+    background-color: var(--file-bg);
+    border: 1px solid #aaa;
+    border-radius: 0 0 8px 8px;
+    padding: 2.5rem;
+    height: 500px; 
+    text-align: center;
+    position: relative;
+    display: flex; 
+    flex-direction: column;
+}
+
+/* --- New styles for the "About Me" section --- */
+.about-content-wrapper {
+    display: flex;
+    align-items: center; 
+    gap: 2rem;           
+    margin-top: 1.5rem;  
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    object-fit: cover;     
+    flex-shrink: 0;        
+}
+
+.about-text {
+    text-align: left;
+}
+
+.about-text p:first-child {
+    margin-top: 0;
+}
+
+/* --- Section-Specific Colors (Applied by JS) --- */
+.portfolio-file.lavender-theme { background-color: var(--lavender-bg); color: var(--text-dark); }
+.portfolio-file.lavender-theme h1,
+.portfolio-file.lavender-theme h2 { color: #5a4b70; }
+.tab-link.active.lavender-theme { background-color: var(--lavender-bg); border-bottom-color: var(--lavender-bg); }
+
+/* --- Content Styling --- */
+.hidden { display: none; }
+
+h1, h2 { font-family: var(--font-heading); margin-top: 0; }
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.5rem; }
+p { line-height: 1.6; max-width: 600px; margin: 1rem auto; }
+
+.profile-pic { width: 200px; height: 200px; border-radius: 50%; border: 3px solid #fff; margin: 1rem 0; }
+
+.bookshelf { display: flex; justify-content: center; align-items: flex-end; height: 200px; margin-top: 2rem; }
+.book {
+    width: 40px;
+    height: 160px;
+    margin: 0 2px;
+    border-radius: 4px 4px 0 0;
+    box-shadow: inset 3px 0 5px rgba(0,0,0,0.2);
+    color: white;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    padding: 10px 5px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none; 
+}
+.book:nth-child(1) { height: 165px; }
+.book:nth-child(2) { height: 145px; }
+.book:nth-child(3) { height: 160px; }
+.book:nth-child(4) { height: 150px; }
+.book:nth-child(5) { height: 162px; }
+.book:nth-child(6) { height: 155px; }
+.book:nth-child(7) { height: 160px; }
+.book:nth-child(8) { height: 158px; }
+.book:nth-child(9) { height: 164px; }
+
+.ticket-board {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;      
+    margin-top: 2rem;
+}
+
+.ticket {
+    background: #FDFBF7;
+    padding: 0.55rem;       
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #ddd;
+    width: 120px;           
+    min-height: 140px;     
+    text-align: center;
+    text-decoration: none; 
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.25s ease-in-out;
+}
+
+/* --- Individual rotations for the "scattered" scrapbook look --- */
+.ticket:nth-child(1) { transform: rotate(2deg); }
+.ticket:nth-child(2) { transform: rotate(-4deg); }
+.ticket:nth-child(3) { transform: rotate(1deg); }
+.ticket:nth-child(4) { transform: rotate(5deg); }
+.ticket:nth-child(5) { transform: rotate(-2deg); }
+.ticket:nth-child(6) { transform: rotate(-4deg); }
+.ticket:nth-child(7) { transform: rotate(2deg); }
+.ticket:nth-child(8) { transform: rotate(5deg); }
+
+
+.ticket:hover {
+    transform: scale(1.1) rotate(0deg); 
+    z-index: 10;                        
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.connect-links { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+.connect-field { display: block; background: #FDFBF7; border: 1px solid #ccc; border-radius: 4px; padding: 15px; width: 80%; text-decoration: none; color: #555; }
